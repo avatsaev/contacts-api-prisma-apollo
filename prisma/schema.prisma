@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://user:password@localhost:5432/contact_book?schema=public"
+}
+
+model Contact {
+  id    Int     @default(autoincrement()) @id
+  email String  @unique
+  name  String
+  phone String?
+
+}
